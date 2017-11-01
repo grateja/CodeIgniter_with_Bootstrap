@@ -5,13 +5,14 @@ class Welcome extends MY_Controller {
 	public function index(){
 
 		$array = array(
-			'current_user' => 1
+			'user_id' => 1
 		);
 		
 		$this->session->set_userdata( $array );
 
 		$this->load->model('account_model');
-		$current_user = $this->account_model->get_current_user();
+		$current_user = $this->account_model->get_current_user("*");
+		print_r($current_user);
 
 		if($current_user == null){
 			$membership_link[] = "<li>" . anchor('Membership/login', 'Login') . "</li>";
