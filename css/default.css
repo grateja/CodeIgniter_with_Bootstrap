@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+.noscript {
+  background-color: #fff8dc;
+  color: #f1b400;
+  font-size: .9em;
+  padding: 4px;
+  text-align: center;
+}
+
+body {
+  background-color: #eee;
+  font-family: 'roboto';
+  font-size: 11pt;
+  letter-spacing: -1;
+}
+
+a {
+  text-decoration: none;
+  color: #285AC0;
+}
+a img {
+  opacity: 1;
+  transition: 0.2s;
+}
+a img:hover {
+  opacity: 0.7;
+  transition: 0.2s;
+}
+a:hover {
+  text-decoration: underline;
+  color: #D72929;
+}
+
+/*# sourceMappingURL=default.css.map */

@@ -1,0 +1,80 @@
+@media screen and (min-width: 960px){
+	/* 960 to 1279 */
+	div#container{
+		width: 960px;
+	}
+	.section,.header,.footer{
+	}
+	body{
+		background-color: #ddd;
+	}
+}
+@media screen and (min-width: 1280px){
+	/* 1280 above */
+	div#container{
+		width: 1024px;
+	}
+	.section,.header,.footer{
+	}
+	body{
+		background-color: #ccc;
+	}
+}
+@media screen and (max-width: 959px) and (min-width: 595px){
+	/* 641 to 959 */
+	div#container{
+
+	}
+	.section,.header,.footer{
+	}
+	body{
+		background-color: #eee;
+	}
+	input[type='text'],
+	input[type='password'],
+	select{
+		display: block;
+		margin: 10px;
+		width: 250px;
+	}
+	input[type='submit']{
+		margin-left: 160px;
+	}
+	label{
+		clear: left;
+		float: left;
+		margin: 5px;
+		width: 150px;
+		text-align: right;
+	}
+}
+@media screen and (max-width: 639px){
+	/* 640 below */
+	div#container{
+		margin: 10px;
+	}
+	.section,.header,.footer{
+		box-shadow: none;
+	}
+	body{
+		background-color: #fff;
+		margin: 0px;
+		padding: 0px;
+	}
+	input[type='text'],
+	input[type='password'],
+	select{
+		display: block;
+		margin: 10px auto;
+		width: 100%;
+	}
+	input[type='submit']{
+		width: 100%;
+		margin: 0px auto;
+	}
+	label{
+		display: block;
+		text-align: left;
+		margin: 5px;
+	}
+}
