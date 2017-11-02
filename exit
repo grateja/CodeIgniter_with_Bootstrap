@@ -1,0 +1,30 @@
+[33mcommit 9b8634feb0252cc89bb2c12b0fa48c476a36c895[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: gratch1001 <grateja1001@gmail.com>
+Date:   Thu Nov 2 08:55:21 2017 +0800
+
+    exceptions to user credential added
+
+[33mcommit c9ef43ae2d015331dfb37d57cbd0b02041eff183[m
+Merge: f4b22b1 3801690
+Author: gratch1001 <grateja1001@gmail.com>
+Date:   Wed Nov 1 23:43:28 2017 +0800
+
+    get_current_user fixed AGAIN
+
+[33mcommit 3801690573b6bc6b29ce31122526b2c941a42bc2[m[33m ([m[1;32mtemp[m[33m)[m
+Author: gratch1001 <grateja1001@gmail.com>
+Date:   Wed Nov 1 23:25:16 2017 +0800
+
+    get_current_user fixed
+
+[33mcommit f4b22b1c0c10a26d963b54f87bb386435922ca46[m[33m ([m[1;31mCodeIgniter_Bootstrap/master[m[33m, [m[1;32mbackup[m[33m)[m
+Author: gratch1001 <grateja1001@gmail.com>
+Date:   Wed Nov 1 16:03:18 2017 +0800
+
+    readme.rst deleted
+
+[33mcommit 8307cd754af1e0f66a596be1a631340175907dad[m
+Author: gratch1001 <grateja1001@gmail.com>
+Date:   Wed Nov 1 15:38:48 2017 +0800
+
+    tested to webhost
