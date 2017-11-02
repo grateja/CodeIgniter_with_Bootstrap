@@ -1,0 +1,21 @@
+@import "vars";
+@import "mixins";
+.login{
+	background-color:#ECECEC;
+	border-radius: 5px;
+	border: 1px dashed #26AED0;
+	transition: .4s;
+	padding: 30px;
+	margin: 10px auto;
+	width: 40%;
+	@include apply-to('large'){
+		width: 50%;
+	}
+	@include apply-to('medium'){
+		width: 70%;
+	}
+	@include apply-to('small'){
+		width: 100%;
+		padding: 10px;
+	}
+}

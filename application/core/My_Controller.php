@@ -13,8 +13,8 @@ class MY_Controller extends CI_Controller {
 
     if($current_user == null){
       $membership_link = array(
-        anchor('Membership/login', 'Login'),
-        anchor('Membership/signup', 'Sign up')
+        anchor(base_url('Membership/login'), 'Login'),
+        anchor(base_url('Membership/signup'), 'Sign up')
       );
     } else {
       $dropdown_attr = array('class' => 'dropdown');
@@ -24,13 +24,13 @@ class MY_Controller extends CI_Controller {
         'aria-expanded' => 'true'
       );
       $dropdown_list = ul(
-        array(anchor('Membership/logout', 'Logout')),
+        array(anchor(base_url('Membership/logout'), 'Logout')),
         array("class" => "dropdown-menu"));
       $dropdown = array(
         'text'=> anchor('#', '<span class="caret"></span>',$carret_attr) . $dropdown_list,
         'attr'=> $dropdown_attr);
       $membership_link = array(
-        anchor('Membership/account', $current_user),
+        anchor(base_url('Membership/account'), $current_user),
         $dropdown);
     }
 

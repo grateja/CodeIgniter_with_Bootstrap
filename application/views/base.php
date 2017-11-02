@@ -47,10 +47,6 @@
                 </div>
                 <div class="navbar-collapse collapse in" id="myNavbar" aria-expanded="true" style="">
                     <ul class="nav navbar-nav">
-                        <li><a href="">This</a></li>
-                        <li><a href="">is</a></li>
-                        <li><a href="">a</a></li>
-                        <li><a href="">fucking</a></li>
                         <li><a href="">navbar</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="" aria-expanded="false">view more shits... <span class="caret"></span></a>

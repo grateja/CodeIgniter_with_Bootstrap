@@ -1,2 +1,15 @@
 $link-default: #285AC0;
 $link-hover: #D72929;
+
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
+
+$breakpoints: (
+  'small'  : ( max-width:  768px ),
+  'medium' : ( max-width:  992px ),
+  'large'  : ( max-width: 1200px )
+);
