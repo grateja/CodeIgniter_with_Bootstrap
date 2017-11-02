@@ -32,10 +32,8 @@ class Account_model extends CI_Model {
 		// check if requested user credential request is an array
 		if(is_array($usr_crdls)){
 			// check if requested user credentials exist in the list
-			//		print_r(array_diff($__usr_crdls ,$usr_crdls));
 			if(count(array_diff($usr_crdls, $__usr_crdls))){
-				echo 'one item doesn"t exists';
-				print_r(array_diff($usr_crdls, $__usr_crdls));
+				throw new Exception("credentials doesn't exists", 1);
 			} else {
 				$this->db->where('id',$id);
 				$this->db->limit(1);
@@ -59,6 +57,8 @@ class Account_model extends CI_Model {
 			if(in_array($usr_crdls, $__usr_crdls)){
 				// return specific request credential
 				return $query->result_array()[0][$usr_crdls];
+			} else {
+				throw new Exception("credentials doesn't exists", 1);
 			}
 
 			return null;
