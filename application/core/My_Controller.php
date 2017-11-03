@@ -9,7 +9,7 @@ class MY_Controller extends CI_Controller {
   }
 
   function _membership_link(){
-    $current_user = $this->account_model->get_current_user('surname');
+    $current_user = $this->account_model->get_current_user(array('surname','user_type'));
 
     if($current_user == null){
       $membership_link = array(
@@ -18,19 +18,25 @@ class MY_Controller extends CI_Controller {
       );
     } else {
       $dropdown_attr = array('class' => 'dropdown');
+
       $carret_attr = array(
         'class' => 'dropdon-toggle',
         'data-toggle' => 'dropdown',
         'aria-expanded' => 'true'
       );
+
       $dropdown_list = ul(
         array(anchor(base_url('Membership/logout'), 'Logout')),
         array("class" => "dropdown-menu"));
+
       $dropdown = array(
         'text'=> anchor('#', '<span class="caret"></span>',$carret_attr) . $dropdown_list,
         'attr'=> $dropdown_attr);
+
+      $user_type = $current_user->user_type;
+
       $membership_link = array(
-        anchor(base_url('Membership/account'), $current_user),
+        anchor(base_url('Membership/account'), " ($user_type) ".$current_user->surname),
         $dropdown);
     }
 

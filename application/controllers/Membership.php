@@ -10,15 +10,29 @@ class Membership extends MY_Controller {
 		$this->login();
 	}
 
+  function account(){
+  	$current_user = $this->account_model->get_current_user("*");
+
+
+  	$data['current_user'] = $current_user;
+
+  	$this->load->view('membership/account',$data);
+  }
 	function logout(){
 		session_unset('user_id');
+		redirect(base_url('Membership/login'));
 	}
 
 	function login(){
+		$current_user = $this->account_model->get_current_user("id");
+		if($current_user){
+			redirect(base_url('Membership/account'));
+		}
 		$data['css'] = array('login');
 
 		$data['username_error'] = isset($_SESSION["username_error"])?"Unknown username":"";
 		$data['password_error'] = isset($_SESSION["password_error"])?"Wrong password":"";
+		$data['login_active'] = "active";
 
 		unset($_SESSION['username_error'],$_SESSION["password_error"]);
 
@@ -29,8 +43,7 @@ class Membership extends MY_Controller {
 		$this->load->view('Membership/signup',$data);
 	}
 	function login_attempt(){
-		$current_user = $this->account_model->get_current_user("id");
-		if($_POST && $current_user == null){
+		if($_POST){
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 
@@ -41,13 +54,13 @@ class Membership extends MY_Controller {
 				);
 				
 				$this->session->set_userdata($array);
-				print_r($user_id);
+			} else {			
+				redirect(base_url('Membership/login?err=1'));
 			}
 		}
 		// user is logged in
 		// or no post request at all
-		redirect(base_url('Membership/login?err=1'));
-
+		redirect(base_url('Membership/account'));
 	}
 
 }

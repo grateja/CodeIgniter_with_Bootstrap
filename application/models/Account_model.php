@@ -61,9 +61,7 @@ class Account_model extends CI_Model {
 				$this->db->limit(1);
 				$this->db->select($usr_crdls);
 				$query = $this->db->get('account_table');
-				echo '<pre>';
-				print_r($query->result());
-				echo '</pre>';
+				return $query->row();
 			}
 		} else {
 
