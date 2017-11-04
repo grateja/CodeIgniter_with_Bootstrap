@@ -23,6 +23,18 @@
 }
 .signup{
 	#create_account{
-		margin-right: 15px;
+	}
+	width: 60%;
+	@include pull-center;
+	@include apply-to('large'){
+		width: 70%;
+	}
+	@include apply-to('medium'){
+		width: 90%;
+	}
+	@include apply-to('small'){
+		width: 100%;
+		padding: 10px;
+		box-shadow: none;
 	}
 }

@@ -1,11 +1,11 @@
 <div class="container">
 	<div class="signup">
-		<form action="<?=base_url('Membership/signup_attemp')?>" method="POST">
+		<form action="<?=base_url('Membership/signup_attempt')?>" method="POST">
 			<fieldset class="row">
 				<legend>Personal info</legend>
 				<div class="form-group col-sm-4">
-					<label for="lastname">Last name:</label>
-					<input id="lastname" name="lastname" class="input-sm form-control">
+					<label for="surname">Last name:</label>
+					<input id="surname" name="surname" class="input-sm form-control">
 				</div>
 				<div class="form-group col-sm-4">
 					<label for="firstname">First name:</label>
@@ -54,9 +54,29 @@
 				</div>
 			</fieldset>
 
-			<div class="row">
-				<input id="create_account" type="submit" class="btn btn-primary pull-right" value="Create Account">
-			</div>
+			<fieldset class="row">
+				<legend>Account info</legend>
+				<div class="col-sm-12">
+					<div class="row form-group">
+						<label for="username" class="col-sm-2 col-form-label">Username:</label>
+						<div class="col-sm-6">
+							<input type="text" id="username" name="username" class="input-sm form-control">
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<label for="password" class="col-sm-2 col-form-label">Password:</label>
+						<div class="col-sm-6">
+							<input type="password" id="password" name="password" class="input-sm form-control">
+						</div>
+					</div>
+
+					<div class="row form-group">
+						<input id="create_account" type="submit" class="btn btn-primary col-sm-offset-2" value="Create Account">
+					</div>
+				</div>
+			</fieldset>
+
 
 		</form>
 	</div>

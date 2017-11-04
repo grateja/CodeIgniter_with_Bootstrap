@@ -11,8 +11,8 @@ class Membership extends MY_Controller {
 	}
 
   function account(){
+  	$this->account_model->restrict_user();
   	$current_user = $this->account_model->get_current_user("*");
-
 
   	$data['current_user'] = $current_user;
 
@@ -24,10 +24,7 @@ class Membership extends MY_Controller {
 	}
 
 	function login(){
-		$current_user = $this->account_model->get_current_user("id");
-		if($current_user){
-			redirect(base_url('Membership/account'));
-		}
+		$this->account_model->check_login();
 		$data['css'] = array('login');
 
 		$data['username_error'] = isset($_SESSION["username_error"])?"Unknown username":"";
@@ -39,18 +36,42 @@ class Membership extends MY_Controller {
 		$this->load->view('Membership/login',$data);
 	}
 	function signup(){
+		$this->account_model->check_login();
 		$data['css'] = array('login');
 		$this->load->view('Membership/signup',$data);
 	}
+
+	function signup_attempt(){
+		if($_POST){
+			$account_id = $this->account_model->generate_id();
+			$data = array(
+				'account_id' => $account_id,
+				'surname' => $this->input->post('surname'),
+				'firstname' => $this->input->post('firstname'),
+				'middlename' => $this->input->post('middlename'),
+				'course_section' => $this->input->post('course_section'),
+				'year_grade' => $this->input->post('year_grade'),
+				'adviser' => $this->input->post('adviser'),
+				'contact_number' => $this->input->post('contact_number'),
+				'address' => $this->input->post('address'),
+				'email' => $this->input->post('email'),
+				'username' => $this->input->post('username'),
+				'password' => $this->input->post('password')
+				);
+			$this->account_model->insert_user($data);
+			$this->session->userdata(array('account_id' => $account_id));
+		}
+	}
+
 	function login_attempt(){
 		if($_POST){
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 
-			$user_id = $this->account_model->auth_user($username,$password);
-			if($user_id){
+			$account_id = $this->account_model->auth_user($username,$password);
+			if($account_id){
 				$array = array(
-					'user_id' => $user_id
+					'account_id' => $account_id
 				);
 				
 				$this->session->set_userdata($array);

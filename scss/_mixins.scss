@@ -20,3 +20,8 @@
         + "Please make sure it is defined in `$breakpoints` map.";
   }
 }
+
+@mixin pull-center(){
+  margin-left: auto;
+  margin-right: auto;
+}
