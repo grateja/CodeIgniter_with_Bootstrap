@@ -4,7 +4,7 @@
       <div class="form-group row <?=$username_error?'has-error':'' ?>">
         <label for="username" class="col-sm-3 col-form-label">Email</label>
         <div class="col-sm-9">
-          <input type="email" class="form-control" id="username" placeholder="Username or Email" name="username">
+          <input type="email" class="form-control" id="username" placeholder="Username or Email" name="username" value=<?=$username?>>
         </div>
         <?php if($username_error):?>
         <div class="col-sm-12 text-center alert-danger alert">Invalid username or email</div>
