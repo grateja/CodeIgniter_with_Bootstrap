@@ -43,19 +43,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="navbar-brand">Gratch Library System</div>
+                    <div class="navbar-brand"><a href="<?=base_url()?>">Gratch Library System</a></div>
                 </div>
                 <div class="navbar-collapse collapse in" id="myNavbar" aria-expanded="true" style="">
-                    <ul class="nav navbar-nav">
-                        <li><a href="">navbar</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="" aria-expanded="false">view more shits... <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li class="active"><a href="">this</a></li>
-                                <li><a href="">keme</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <?=$nav ?>
                     <?=$membership_link ?>
                 </div>
             </div>

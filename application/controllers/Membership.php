@@ -56,11 +56,12 @@ class Membership extends MY_Controller {
 				'address' => $this->input->post('address'),
 				'email' => $this->input->post('email'),
 				'username' => $this->input->post('username'),
-				'password' => $this->input->post('password')
+				'password' => password_hash($this->input->post('password'),PASSWORD_BCRYPT)
 				);
 			$this->account_model->insert_user($data);
-			$this->session->userdata(array('account_id' => $account_id));
+			$this->session->set_userdata(array('account_id' => $account_id));
 		}
+		redirect(base_url('Membership/account'));
 	}
 
 	function login_attempt(){
