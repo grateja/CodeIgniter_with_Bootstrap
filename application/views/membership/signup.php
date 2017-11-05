@@ -8,13 +8,13 @@
 
 					<div class="form-group col-sm-4 <?=isset($surname_err)?'has-error':''?>">
 						<label for="surname" <?=isset($surname_err)?'class="text-danger"':''?>>Last name:</label>
-						<input type="text" value="<?=$surname?>" id="surname" name="surname" class="input-sm form-control">
+						<input type="text" value="<?=$surname?>" id="surname" name="surname" class="input-sm form-control" required>
 						<?= isset($surname_err)?$surname_err:'' ?>
 					</div>
 
 					<div class="form-group col-sm-4 <?=isset($firstname_err)?'has-error':''?>">
 						<label for="firstname" <?=isset($firstname_err)?'class="text-danger"':''?>>First name:</label>
-						<input type="text" value="<?=$firstname?>" id="firstname" name="firstname" class="input-sm form-control">
+						<input type="text" value="<?=$firstname?>" id="firstname" name="firstname" class="input-sm form-control" required>
 						<?= isset($firstname_err)?$firstname_err:'' ?>
 					</div>
 
@@ -29,7 +29,7 @@
 
 					<div class="form-group col-sm-4 <?=isset($course_section_err)?'has-error':''?>">
 						<label for="course_section" <?=isset($course_section_err)?'class="text-danger"':''?>>Course/Section:</label>
-						<input type="text" value="<?=$course_section?>" id="course_section" name="course_section" class="input-sm form-control">
+						<input type="text" value="<?=$course_section?>" id="course_section" name="course_section" class="input-sm form-control" required>
 						<?= isset($course_section_err)?$course_section_err:'' ?>
 					</div>
 
@@ -45,7 +45,7 @@
 
 					<div class="form-group col-sm-4 <?=isset($adviser_err)?'has-error':''?>">
 						<label for="adviser" <?=isset($adviser_err)?'class="text-danger"':''?>>Adviser:</label>
-						<input type="text" value="<?=$adviser?>" id="adviser" name="adviser" class="input-sm form-control">
+						<input type="text" value="<?=$adviser?>" id="adviser" name="adviser" class="input-sm form-control" required>
 						<?= isset($adviser_err)?$adviser_err:'' ?>
 					</div>
 
@@ -59,7 +59,7 @@
 
 				<div class="form-group col-sm-6 <?=isset($contact_number_err)?'has-error':''?>">
 					<label for="contact_number" <?=isset($contact_number_err)?'class="text-danger"':''?>>Contact number:</label>
-					<input type="text" value="<?=$contact_number?>" id="contact_number" name="contact_number" class="input-sm form-control">
+					<input type="text" value="<?=$contact_number?>" id="contact_number" name="contact_number" class="input-sm form-control" required>
 					<?= isset($contact_number_err)?$contact_number_err:'' ?>
 				</div>
 
@@ -88,7 +88,7 @@
 					<div class="row form-group <?=isset($username_err)?'has-error':''?>">
 						<label for="username" class="col-sm-3 col-form-label <?=isset($username_err)?'text-danger':''?>">Username:</label>
 						<div class="col-sm-6">
-							<input type="text" value="<?=$username?>" id="username" name="username" class="input-sm form-control">
+							<input type="text" value="<?=$username?>" id="username" name="username" class="input-sm form-control" required>
 						</div>
 						<?= isset($username_err)?$username_err:'' ?>
 					</div>
@@ -96,7 +96,7 @@
 					<div class="row form-group <?=isset($password_err)?'has-error':''?>">
 						<label for="password" class="col-sm-3 col-form-label <?=isset($password_err)?'text-danger':''?>">Password:</label>
 						<div class="col-sm-6">
-							<input type="password" id="password" name="password" class="input-sm form-control">
+							<input type="password" id="password" name="password" class="input-sm form-control" required>
 						</div>
 						<?= isset($password_err)?$password_err:'' ?>
 					</div>
@@ -104,7 +104,7 @@
 					<div class="row form-group <?=isset($confirm_password_err)?'has-error':''?>">
 						<label for="confirm_password" class="col-sm-3 col-form-label <?=isset($confirm_password_err)?'text-danger':''?>">Confirm Password:</label>
 						<div class="col-sm-6">
-							<input type="confirm_password" id="confirm_password" name="confirm_password" class="input-sm form-control">
+							<input type="password" id="confirm_password" name="confirm_password" class="input-sm form-control" required>
 						</div>
 						<?= isset($confirm_password_err)?$confirm_password_err:'' ?>
 					</div>

@@ -33,6 +33,16 @@ class Account_model extends CI_Model {
     return $str;
   }
 
+  function username_exists($username){
+  	return $this->data_exists('account_table',array('username'=>$username));
+  }
+
+  function data_exists($table_name,$data){
+  	$query = $this->db->query("SELECT `id` FROM `$table_name` WHERE " . where_clause($data) . " LIMIT 1");
+  	$result = $query->row();
+  	return $result != null;
+  }
+
   function insert_user($data){
   	$this->db->insert('account_table',$data);
   }

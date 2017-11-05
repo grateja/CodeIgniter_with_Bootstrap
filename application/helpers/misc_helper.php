@@ -96,6 +96,17 @@ if(!function_exists("_nav_links")){
   }
 }
 
+if(!function_exists('where_clause')){
+  function where_clause($data){
+    $q = "";
+    foreach ($data as $key => $value) {
+      $value = is_int($value) ? $value : "'" . mysql_real_escape_string($value) . "'";
+      $q .= "`$key` = " . "$value";
+    }
+    return $q;
+  }
+}
+
 if(!function_exists("_attributes")){
   function _attributes($attributes = array()){
   	$_attr = "";

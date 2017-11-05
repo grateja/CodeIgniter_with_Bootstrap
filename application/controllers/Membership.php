@@ -39,7 +39,7 @@ class Membership extends MY_Controller {
 			$_SESSION['username_error'],
 			$_SESSION["password_error"],
 			$_SESSION['username']
-			);
+		);
 
 		$this->load->view('Membership/login',$data);
 	}
@@ -62,12 +62,20 @@ class Membership extends MY_Controller {
 		$validation_errors = session_delete_set('validation_errors');
 
 		if($validation_errors){
+			$attr = array('class' => 'text-danger');
 			foreach ($validation_errors as $key => $value) {
-				$data[$key.'_err'] = span($value,array('class'=>'text-danger'));
+				if($key == 'username' || $key == 'password' || $key == 'confirm_password')
+					$attr['class'] = 'text-danger col-sm-3'; 
+				$data[$key.'_err'] = span($value,$attr);
 			}
 		}
 
 		$this->load->view('Membership/signup',$data);
+	}
+  
+	function unique($arg){
+		// return false if failed
+		return !$this->account_model->username_exists($arg);
 	}
 
 	function signup_attempt(){
@@ -94,9 +102,9 @@ class Membership extends MY_Controller {
 			$this->form_validation->set_rules('year_grade', 'Year/Grade', 'required');
 			$this->form_validation->set_rules('adviser', 'Adviser', 'required');
 			$this->form_validation->set_rules('contact_number', 'Contact number', 'required');
-			$this->form_validation->set_rules('username', 'Username', 'required|min_length[4]');
+			$this->form_validation->set_rules('username', 'Username', 'required|min_length[4]|callback_unique');
 			$this->form_validation->set_rules('password', 'Password', 'required|min_length[4]');
-			$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required');
+			$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]');
 
 			if ($this->form_validation->run() == FALSE) {
 
