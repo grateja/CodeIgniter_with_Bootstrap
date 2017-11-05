@@ -16,6 +16,7 @@ class MY_Controller extends CI_Controller {
     $current_user = $this->account_model->get_current_user(array('surname','user_type'));
 
     $data['membership_link'] = _membership_link($current_user);
+    // $data['membership_link'] = $this->load->view('layout/user_nav',array('display_name'=>'admin keme'),true);
     $data['nav'] = _nav_links($current_user);
 
     echo($this->load->view('base', $data, true));
