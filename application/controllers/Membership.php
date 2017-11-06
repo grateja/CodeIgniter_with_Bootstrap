@@ -17,6 +17,8 @@ class Membership extends MY_Controller {
 
   	$data['current_user'] = $current_user;
 
+  	$data['css'] = array('account');
+
   	$this->load->view('membership/account',$data);
   }
 	function logout(){
