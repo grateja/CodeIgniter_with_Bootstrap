@@ -1,29 +1,25 @@
 <div class="container">
   <div class="login">
-    <form action="<?=base_url('Membership/login_attempt')?>" method="POST" novalidate>
+    <form action="<?=base_url('Membership/login_attempt')?>" method="POST">
       <div class="form-group row <?=$username_error?'has-error':'' ?>">
         <label for="username" class="col-sm-3 col-form-label">Email</label>
         <div class="col-sm-9">
-          <input type="email" class="form-control" id="username" placeholder="Username or Email" name="username" value=<?=$username?>>
+          <input type="text" class="form-control" id="username" placeholder="Username or Email" name="username" required value=<?=$username?>>
         </div>
-        <?php if($username_error):?>
-        <div class="col-sm-12 text-center alert-danger alert">Invalid username or email</div>
-        <?php endif; ?>
+        <?= isset($username_error)?$username_error:'' ?>
       </div>
 
       <div class="form-group row <?=$password_error?'has-error':'' ?>">
         <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
         <div class="col-sm-9">
-          <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" required>
         </div>
-        <?php if($password_error):?>
-        <div class="col-sm-12 alert-danger text-center alert">Wrong password</div>
-        <?php endif; ?>
+        <?= isset($password_error)?$password_error:'' ?>
       </div>
 
       <div class="form-group row">
         <div class="col-sm-9 col-sm-offset-3">
-          <input type="submit" class="btn btn-primary" value="login">
+          <input type="submit" class="btn btn-primary" value="Login">
         </div>
       </div>
     </form>

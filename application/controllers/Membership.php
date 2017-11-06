@@ -28,8 +28,12 @@ class Membership extends MY_Controller {
 		$this->account_model->check_login();
 		$data['css'] = array('login');
 
-		$data['username_error'] = isset($_SESSION["username_error"])?"Unknown username":"";
-		$data['password_error'] = isset($_SESSION["password_error"])?"Wrong password":"";
+		$attr = array(
+			'class' => 'text-danger col-sm-12 col-sm-offset-3'
+		);
+
+		$data['username_error'] = isset($_SESSION["username_error"])?span("Invalid username",$attr):"";
+		$data['password_error'] = isset($_SESSION["password_error"])?span("Invalid password",$attr):"";
 		$data['username'] = isset($_SESSION["username"])?$_SESSION["username"]:"";
 		
 		$data['login_active'] = "active";

@@ -112,6 +112,9 @@ class Account_model extends CI_Model {
 			$this->db->limit(1);
 			$query = $this->db->get('account_table');
 
+			// return null if user doesn't exists
+			if(!$query->row()) return null;
+
 			if($usr_crdls == "*"){
 				// return all data as associate array
 				return $query->row();
