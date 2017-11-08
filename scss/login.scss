@@ -24,17 +24,21 @@
 .signup{
 	#create_account{
 	}
-	width: 60%;
-	@include pull-center;
-	@include apply-to('large'){
-		width: 70%;
+	input[type='file']{
+		display: none;
 	}
-	@include apply-to('medium'){
-		width: 90%;
-	}
-	@include apply-to('small'){
-		width: 100%;
-		padding: 10px;
-		box-shadow: none;
+	.avatar{
+		position: relative;
+		.caption{
+			background-color: rgba(99, 103, 114, 0.64);
+			bottom: 0px;
+			color: white;
+			padding: 10px;
+			position: absolute;			
+			width: 100%;
+		}
+		img{
+			width: 150px;
+		}
 	}
 }

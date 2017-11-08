@@ -26,25 +26,20 @@
   }
 }
 
-.signup {
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+.signup input[type='file'] {
+  display: none;
 }
-@media (max-width: 1200px) {
-  .signup {
-    width: 70%;
-  }
+.signup .avatar {
+  position: relative;
 }
-@media (max-width: 992px) {
-  .signup {
-    width: 90%;
-  }
+.signup .avatar .caption {
+  background-color: rgba(99, 103, 114, 0.64);
+  bottom: 0px;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
 }
-@media (max-width: 768px) {
-  .signup {
-    width: 100%;
-    padding: 10px;
-    box-shadow: none;
-  }
+.signup .avatar img {
+  width: 150px;
 }

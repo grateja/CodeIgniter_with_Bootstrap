@@ -53,6 +53,10 @@
         </nav>
 
         <?=$content;?>
-        <div class="footer"></div>
+        <div class="footer">
+            <div class="container">
+            gratch@keme.lang
+            </div>
+        </div>
     </body>
 </html>

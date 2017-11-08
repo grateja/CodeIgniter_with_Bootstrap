@@ -76,6 +76,8 @@ class Membership extends MY_Controller {
 			}
 		}
 
+		$data['signup_form'] = $this->load->view('Membership/signup_form',$data,true);
+
 		$this->load->view('Membership/signup',$data);
 	}
   
